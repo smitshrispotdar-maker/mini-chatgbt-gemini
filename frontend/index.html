@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mini ChatGPT</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><span class="brand-icon">✦</span><span>Mini ChatGPT</span></div>
+      <button id="new-chat" class="new-chat">＋ New chat</button>
+      <div class="sidebar-note">
+        <strong>Hybrid assistant</strong>
+        <p>Gemini + optional web search online, built-in FAQ fallback offline.</p>
+      </div>
+      <div class="sidebar-bottom">
+        <span class="status-dot"></span>
+        <span id="connection-label">Checking connection…</span>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="mobile-brand">✦ Mini ChatGPT</div>
+        <div class="mode-pill" id="mode-pill">Checking status…</div>
+      </header>
+
+      <section id="chat" class="chat" aria-live="polite">
+        <div class="welcome" id="welcome">
+          <div class="welcome-icon">✦</div>
+          <h1>What can I help with?</h1>
+          <p>Ask a question. Online, Gemini can answer and web search can find recent information.</p>
+          <div class="suggestions">
+            <button class="suggestion" data-question="Explain artificial intelligence in simple words">Explain AI simply</button>
+            <button class="suggestion" data-question="What is a Python function? Give an example.">Learn Python</button>
+            <button class="suggestion" data-question="What are the latest developments in AI?">Latest AI developments</button>
+          </div>
+        </div>
+      </section>
+
+      <div class="composer-wrap">
+        <form id="chat-form" class="composer">
+          <textarea id="message" rows="1" maxlength="8000" placeholder="Message Mini ChatGPT…" aria-label="Your message"></textarea>
+          <div class="composer-tools">
+            <label class="search-toggle"><input type="checkbox" id="web-search" checked /> <span>Web search</span></label>
+            <span class="hint">Enter to send · Shift+Enter for new line</span>
+            <button id="send" type="submit" aria-label="Send message">↑</button>
+          </div>
+        </form>
+        <p class="disclaimer">Mini ChatGPT can make mistakes. Verify important information.</p>
+      </div>
+    </main>
+  </div>
+  <script src="/script.js"></script>
+</body>
+</html>
